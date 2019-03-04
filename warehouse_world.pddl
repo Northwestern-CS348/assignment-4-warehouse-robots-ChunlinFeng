@@ -37,7 +37,7 @@
 
    (:action robotMove
       :parameters (?r - robot ?from - location ?target - location)
-      :precondition (and (at ?r ?from) (connected ?from ?target) (no-robot ?target) )
+      :precondition (and (at ?r ?from) (connected ?from ?target) (no-robot ?target) (free ?r)  )
       :effect (and (at ?r ?target) (free ?r) (no-robot ?from) (not (at ?r ?from)) (not (no-robot ?target)) )
    )
    
